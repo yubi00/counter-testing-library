@@ -117,4 +117,32 @@ describe("Counter component", () => {
 
     expect(counterVal.textContent).toBe("25");
   });
+
+  test("should have correct styles for counter value , over 100 and below", () => {
+    const { getByTestId } = render(<Counter />);
+    const counterEl = getByTestId("counter");
+    const increment = getByTestId("increment");
+    const decrement = getByTestId("decrement");
+    const inputEl = getByTestId("input");
+
+    expect(counterEl.className).toBe("counter-val normal");
+
+    fireEvent.change(inputEl, {
+      target: {
+        value: "100"
+      }
+    });
+
+    fireEvent.click(increment);
+    fireEvent.click(increment);
+
+    expect(counterEl.className).toBe("counter-val over-hundred");
+
+    fireEvent.click(decrement);
+    fireEvent.click(decrement);
+    fireEvent.click(decrement);
+    fireEvent.click(decrement);
+
+    expect(counterEl.className).toBe("counter-val under-hundred");
+  });
 });
