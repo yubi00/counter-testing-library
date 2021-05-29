@@ -79,3 +79,20 @@ button {
   font-size: 1rem;
   font-weight: 800;
 }
+
+.counter-val {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.normal {
+  color: white;
+}
+
+.over-hundred {
+  color: green;
+}
+
+.under-hundred {
+  color: red;
+}

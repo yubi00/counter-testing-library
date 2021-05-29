@@ -6,7 +6,18 @@ export const Counter = () => {
 
   return (
     <div className='counter'>
-      <h1 data-testid='counter'>{count}</h1>
+      <h1
+        data-testid='counter'
+        className={
+          count > 100
+            ? "counter-val over-hundred"
+            : count < -100
+            ? "counter-val under-hundred"
+            : "counter-val normal"
+        }
+      >
+        {count}
+      </h1>
       <div>
         <button
           data-testid='increment'
