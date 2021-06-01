@@ -14,13 +14,13 @@
 
 button {
   cursor: pointer;
-  padding: 2rem;
+  padding: 2em;
   color: white;
   background-color: black;
   outline: none;
   border: none;
   border-radius: 0.5rem;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
   margin: 1rem;
 }
